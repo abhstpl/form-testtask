@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on validate with values 1`] = `[Function]`;
+
+exports[`Test on validate with wrong values 1`] = `[Function]`;
+
+exports[`Test on validate without Values 1`] = `[Function]`;

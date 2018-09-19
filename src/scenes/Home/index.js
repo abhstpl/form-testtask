@@ -6,10 +6,14 @@ import { getForm, addForm } from '../../actions/actionUpdateForm';
 import Form from './Form';
 
 class Home extends React.PureComponent {
-  state = {
+ constructor(props) {
+  super(props);
+  this.state = {
     open: false,
-    item: {}
-  }
+    item: []
+  };
+ } 
+
   componentWillMount() {
     this.props.getForm();
   }
@@ -37,7 +41,7 @@ class Home extends React.PureComponent {
           </Row>
          <Modal isOpen={this.state.open} toggle={() => this.setState({open: !this.state.open})}>
            <ModalBody>
-            <Form onAdd={this.props.onAdd} item={this.state.item}/>
+            <Form item={this.state.item}/>
            </ModalBody>
            <ModalFooter>
               <Button color="secondary" onClick={() => this.setState({open: !this.state.open})}>Cancel</Button>
@@ -98,8 +102,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
   return({
-    onAdd: (firstName, lastName, company, department, email) => dispatch(addForm(firstName, lastName, company, department, email)),
-    getForm: () => dispatch(getForm())
+      getForm: () => dispatch(getForm())
   });
 }
 

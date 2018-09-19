@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Test on renderField should render fields 1`] = `
+<renderField
+  className="form-control"
+  input="text"
+  meta={
+    Object {
+      "error": "error",
+      "touched": true,
+      "warning": "warning",
+    }
+  }
+  placeholder="test"
+  type="text"
+  validationError={true}
+/>
+`;
+
+exports[`Test on renderField should render fields 2`] = `
+<renderField
+  className="form-control"
+  input="test"
+  meta={
+    Object {
+      "touched": false,
+    }
+  }
+  placeholder="test"
+  type="text"
+  validationError={false}
+/>
+`;
+
+exports[`Test on renderField should render fields 3`] = `
+<renderField
+  input="test"
+  meta={
+    Object {
+      "error": "error",
+      "touched": false,
+      "warning": "warning",
+    }
+  }
+  placeholder="test"
+  type="text"
+  validationError={false}
+/>
+`;

@@ -4,10 +4,11 @@ import { Field, reduxForm, } from 'redux-form';
 import renderField from './renderField';
 import { Button } from 'reactstrap';
 import validate from './validate';
+import { addForm } from '../../actions/actionUpdateForm';
 
 class Signup extends Component {
   componentDidMount() {
-    this.handleInitialize();
+    this.props.item && this.handleInitialize();
   }
   handleInitialize() {
     const initData = {
@@ -74,7 +75,16 @@ return (
 );
 }
 }
-export default reduxForm({
+
+function mapDispatchToProps(dispatch) {
+  return({
+    onAdd: (firstName, lastName, company, department, email) => dispatch(addForm(firstName, lastName, company, department, email))
+  });
+}
+
+const Form = reduxForm({
   form: 'simple',
   validate
 })(Signup);
+
+export default connect(null, mapDispatchToProps)(Form);
